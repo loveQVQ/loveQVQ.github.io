@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-21T13:57:26.692Z</updated>
+  <updated>2018-03-25T14:17:36.885Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>仅以这篇博客记录我未来的编程生活</title>
+    <link href="http://yoursite.com/2018/03/25/firstBlog/"/>
+    <id>http://yoursite.com/2018/03/25/firstBlog/</id>
+    <published>2018-03-25T13:57:42.266Z</published>
+    <updated>2018-03-25T14:17:36.885Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="知识是一个不断积累的过程"><a href="#知识是一个不断积累的过程" class="headerlink" title="知识是一个不断积累的过程"></a>知识是一个不断积累的过程</h2><p>2015年开始进入大学接触编程先是学了C，然后是C#，现在主要在使用Java进行开发，还想学习Python。回想起之前的编程学习之路感觉自己学的多，忘记的更多😂，现在我想把我学习的知识记录下来，方便自己以后翻看。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;stdio.h&gt;</span></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"hello world!\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;知识是一个不断积累的过程&quot;&gt;&lt;a href=&quot;#知识是一个不断积累的过程&quot; class=&quot;headerlink&quot; title=&quot;知识是一个不断积累的过程&quot;&gt;&lt;/a&gt;知识是一个不断积累的过程&lt;/h2&gt;&lt;p&gt;2015年开始进入大学接触编程先是学了C，然后是C#，现在主
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
