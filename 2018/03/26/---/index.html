@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Java IO流 | Marin&#39;s Blog | 不学习你和咸鱼有什么区别</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="##概述Java中对于数据的操作都是通过流来实现的，而所有操作流的对象都在IO包中。所谓IO流其实是指，Input和Output流。首先明白字节(Byte)和字符(Character)的大小  1 byte = 8 bit 1 char = 2 byte = 16 bit(Java默认UTF-16编码)  详细请看下面关系图：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java IO流">
+<meta property="og:url" content="http://yoursite.com/2018/03/26/---/index.html">
+<meta property="og:site_name" content="Marin&#39;s Blog">
+<meta property="og:description" content="##概述Java中对于数据的操作都是通过流来实现的，而所有操作流的对象都在IO包中。所谓IO流其实是指，Input和Output流。首先明白字节(Byte)和字符(Character)的大小  1 byte = 8 bit 1 char = 2 byte = 16 bit(Java默认UTF-16编码)  详细请看下面关系图：">
+<meta property="og:image" content="http://yoursite.com/2018/03/26/---/media/15220487411000/20160308131106443.jpeg">
+<meta property="og:updated_time" content="2018-03-29T06:19:24.905Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java IO流">
+<meta name="twitter:description" content="##概述Java中对于数据的操作都是通过流来实现的，而所有操作流的对象都在IO包中。所谓IO流其实是指，Input和Output流。首先明白字节(Byte)和字符(Character)的大小  1 byte = 8 bit 1 char = 2 byte = 16 bit(Java默认UTF-16编码)  详细请看下面关系图：">
+<meta name="twitter:image" content="http://yoursite.com/2018/03/26/---/media/15220487411000/20160308131106443.jpeg">
+    
+        <link rel="alternate" type="application/atom+xml" title="Marin&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="https://loveqvq.github.io" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Marin</h5>
+          <a href="mailto:1206189319@qq.com" title="1206189319@qq.com" class="mail">1206189319@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/loveQVQ" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/ysweb" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.marin.kim"  >
+                <i class="icon icon-lg icon-link"></i>
+                My Works
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Java IO流</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Java IO流</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-03-26T07:19:01.101Z" itemprop="datePublished" class="page-time">
+  2018-03-26
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post----"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Java IO流</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-03-26 15:19:01" datetime="2018-03-26T07:19:01.101Z"  itemprop="datePublished">2018-03-26</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>##概述<br>Java中对于数据的操作都是通过流来实现的，而所有操作流的对象都在IO包中。所谓IO流其实是指，Input和Output流。<br>首先明白<code>字节(Byte)</code>和<code>字符(Character)</code>的大小</p>
+<ul>
+<li>1 byte = 8 bit</li>
+<li>1 char = 2 byte = 16 bit(Java默认UTF-16编码)</li>
+</ul>
+<p>详细请看下面关系图：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="media/15220487411000/20160308131106443.jpeg" alt="20160308131106443" title="">
+                </div>
+                <div class="image-caption">20160308131106443</div>
+            </figure></p>
+<p>##File对象<br>File对象用来描述操作系统中文件对象，可以是单个文件或是一个文件目录</p>
+<p>###1.创建File对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File file = new File(<span class="string">"C:"</span> + File.separator+ <span class="string">"1.txt"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>ps: File.separator是File封装的静态字段，表示路径分隔符，因为在Windows和Linux系统分隔符不一样，所有如果用”/”在不同环境下就会报错，所以采用File.separator来表示分隔符，这是一个良好的代码编写习惯。</p>
+<p>###2.File对象常用API<br>File常见API没多少，如果不知道的可以自行百度一波，都是很简单的🤣。</p>
+<p>##字节流</p>
+<p>###1.概述<br>字节流一般用来操作媒体文件（媒体文件也是以字节存储的）</p>
+<p><code>InputStream:</code>所有字节输入流的父类，具有基础的读方法<br><code>int read()</code>–读取一个字节，以int形式返回,如果返回值为-1，说明读到了文件的末尾<br><code>int read(byte[] b)</code>–尝试最多读取给定byte数组的长度个字节并存入该数组，返回值为实际读取到的自己量</p>
+<p><code>OutPutStream:</code>是所有字节输出流的父类，具有基础的写出方法<br><code>void write(int d)</code>–写出一个字节<br><code>void write(byte[] d)</code>–将给定字节数组中的所有字节全部写出<br><code>void write(byte[] d,int off,int len)</code>–写出字节数组中从下标off开始的连续length个字节</p>
+<p>###2.练习<br>个人认为对于IO流的理解还是得靠代码，读懂代码才是王道。<br><code>Test:</code>复制一张图片F:\java_Demo\1.bmp到F:\java_Demo\2.bmp</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">class CopyPic &#123;  </span><br><span class="line">    public static void main(String[] args)&#123;  </span><br><span class="line">        copyBmp();  </span><br><span class="line">        System.out.println(<span class="string">"复制完成"</span>);  </span><br><span class="line">    &#125;</span><br><span class="line">    public static void <span class="function"><span class="title">copyBmp</span></span>() &#123;  </span><br><span class="line"></span><br><span class="line">        FileInputStream fis = null;  </span><br><span class="line">        FileOutputStream fos = null;  </span><br><span class="line">        try &#123;  </span><br><span class="line">        //写入流关联文件 </span><br><span class="line">            fis = new FileInputStream(<span class="string">"F:"</span>+File.separator+<span class="string">"java_Demo"</span>+File.separator+<span class="string">"1.bmp"</span>); </span><br><span class="line">        //读取流关联文件</span><br><span class="line">            fos = new FileInputStream(<span class="string">"F:"</span>+File.separator+<span class="string">"java_Demo"</span>+File.separator+<span class="string">"2.bmp"</span>);  </span><br><span class="line">            byte[] copy = new byte[1024];  </span><br><span class="line">            int len = 0;  </span><br><span class="line">            <span class="keyword">while</span>((len=fis.read(copy))!=-1) &#123;  </span><br><span class="line">            fos.write(copy,0,len);  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        catch (IOException e) &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">            throw new RuntimeException(<span class="string">"复制文件异常"</span>);  </span><br><span class="line">        &#125;  </span><br><span class="line">        finally &#123;  </span><br><span class="line">            try &#123;  </span><br><span class="line">                <span class="keyword">if</span>(fis!=null) fis.close();  </span><br><span class="line">            &#125;  </span><br><span class="line">            catch (IOException e) &#123;  </span><br><span class="line">                e.printStackTrace();  </span><br><span class="line">                throw new RuntimeException(<span class="string">"读取流"</span>);  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">          </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>###3.字节流缓冲区<br>BufferedInputStream,BufferedOutputStream<br>缓冲流的内部维护了一个缓冲区，每当向输入输出流读写数据时，会先将数据保存在缓冲区，当缓冲区满了以后，将数据一次性读写出来，这样可以减少IO操作的次数，从而提高读写效率</p>
+<p><code>Demo:</code>使用缓冲输出流和缓冲输入流实现文件的复制</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public class SummaryBISAndBOS &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        /**</span><br><span class="line">         * 1.先将文件中的内容读入到缓冲输入流中</span><br><span class="line">         * 2.将输入流中的数据通过缓冲输出流写入到目标文件中</span><br><span class="line">         * 3.关闭输入流和输出流</span><br><span class="line">         */</span><br><span class="line">        try &#123;</span><br><span class="line">            long begin=System.currentTimeMillis();</span><br><span class="line">            FileInputStream fis=new FileInputStream(<span class="string">"BISDemo.txt"</span>);</span><br><span class="line">            BufferedInputStream bis=new BufferedInputStream(fis);</span><br><span class="line"></span><br><span class="line">            FileOutputStream fos=new FileOutputStream(<span class="string">"BOSDemo.txt"</span>);</span><br><span class="line">            BufferedOutputStream bos=new BufferedOutputStream(fos);</span><br><span class="line"></span><br><span class="line">            int size=0;</span><br><span class="line">            byte[] buffer=new byte[10240];</span><br><span class="line">            <span class="keyword">while</span>((size=bis.read(buffer))!=-1)&#123;</span><br><span class="line">                bos.write(buffer, 0, size);</span><br><span class="line">            &#125;</span><br><span class="line">            //刷新此缓冲的输出流，保证数据全部都能写出</span><br><span class="line">            bos.flush();</span><br><span class="line">            bis.close();</span><br><span class="line">            bos.close();</span><br><span class="line">            long end=System.currentTimeMillis();</span><br><span class="line">            System.out.println(<span class="string">"使用缓冲输出流和缓冲输入流实现文件的复制完毕！耗时："</span>+(end-begin)+<span class="string">"毫秒"</span>);</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>##字符流<br>字符流以char为单位对数据进行读写，一次处理一个unicode，字符流的底层是基本的字节流。<br><code>Reader</code>是字符输入流的父类</p>
+<p><code>int read()</code> –读取一个字符，这个int返回值可以转换为其对应的char型字符，如果返回-1，说明已经到达末尾<br><code>int read(char[] chars)</code> –从流中读取一个字符数组的length个字符并存入该数组，返回值为实际读取到的字符量</p>
+<p>Writer是字符输出流的父类<br><code>void write(int c)</code> –写出一个字符<br><code>void write(char[] chs)</code> –将给定字符数组中的所有字符写出<br><code>void write(String str)</code> –将给定的字符串写出<br><code>void write(char[] chs,int off,int len)</code> –将给定字符数组中从off开始连续len个字符写出</p>
+<p>###练习<br><code>Test:</code> 用字符流拷贝文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">class CopyText &#123;  </span><br><span class="line">    public static void main(String[] args) throws IOException &#123;  </span><br><span class="line">        sop(<span class="string">"请输入要拷贝的文件的路径:"</span>);  </span><br><span class="line">        Scanner <span class="keyword">in</span> = new Scanner(System.in);  </span><br><span class="line">        String <span class="built_in">source</span> = in.next();  </span><br><span class="line">        sop(<span class="string">"请输入需要拷贝到那个位置的路径以及生成的文件名:"</span>);  </span><br><span class="line">        String destination = in.next();  </span><br><span class="line">        in.close();  </span><br><span class="line">        CopyTextDemo(<span class="built_in">source</span>,destination);  </span><br><span class="line">  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">/*****************文件Copy*********************/  </span><br><span class="line">    private static void CopyTextDemo(String <span class="built_in">source</span>,String destination) &#123;  </span><br><span class="line">  </span><br><span class="line">        try &#123;  </span><br><span class="line">            FileWriter fw = new FileWriter(destination);  </span><br><span class="line">            FileReader fr = new FileReader(<span class="built_in">source</span>);  </span><br><span class="line">            char []  buf = new char[1024];   </span><br><span class="line">            //将Denmo中的文件读取到buf数组中。  </span><br><span class="line">            int num = 0;      </span><br><span class="line">            <span class="keyword">while</span>((num = fr.read(buf))!=-1) &#123;  </span><br><span class="line">                               //String(char[] value , int offest,int count) 分配一个新的String,包含从offest开始的count个字符  </span><br><span class="line">                fw.write(new String(buf,0,num));  </span><br><span class="line">            &#125;  </span><br><span class="line">            fr.close();  </span><br><span class="line">            fw.close();  </span><br><span class="line">        &#125;  </span><br><span class="line">        catch (IOException e) &#123;  </span><br><span class="line">            sop(e.toString());  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">/**********************Println************************/  </span><br><span class="line">    private static void sop(Object obj) &#123;  </span><br><span class="line">        System.out.println(obj);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>###字符流缓冲区<br><code>BufferedReader</code>，<code>BufferedWriter</code> 作用及实现和字节流缓冲区大同小异。</p>
+<p><code>Test:</code> BufferedReader示例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class BufferedReaderDemo &#123;  </span><br><span class="line">    public static void main(String[] args)  throws IOException &#123;  </span><br><span class="line">  </span><br><span class="line">        //创建一个字符读取流流对象，和文件关联  </span><br><span class="line">        FileReader rw = new FileReader(<span class="string">"buf.txt"</span>);  </span><br><span class="line">  </span><br><span class="line">        //只要将需要被提高效率的流作为参数传递给缓冲区的构造函数即可  </span><br><span class="line">        BufferedReader brw = new BufferedReader(rw);  </span><br><span class="line">  </span><br><span class="line">          </span><br><span class="line">        <span class="keyword">for</span>(;;) &#123;  </span><br><span class="line">            String s = brw.readLine();  </span><br><span class="line">            <span class="keyword">if</span>(s==null) <span class="built_in">break</span>;  </span><br><span class="line">            System.out.println(s);  </span><br><span class="line">        &#125;  </span><br><span class="line">          </span><br><span class="line">        brw.close();//关闭输入流对象  </span><br><span class="line">  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>Test:</code> BufferedWriter示例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">class BufferedWriterDemo &#123;  </span><br><span class="line">    public static void main(String[] args)  throws IOException &#123;  </span><br><span class="line">  </span><br><span class="line">        //创建一个字符写入流对象  </span><br><span class="line">        FileWriter fw = new FileWriter(<span class="string">"buf.txt"</span>);  </span><br><span class="line">  </span><br><span class="line">        //为了提高字符写入效率，加入了缓冲技术。  </span><br><span class="line">        //只要将需要被提高效率的流作为参数传递给缓冲区的构造函数即可  </span><br><span class="line">        BufferedWriter bfw = new BufferedWriter(fw);  </span><br><span class="line">  </span><br><span class="line">        //bfw.write(<span class="string">"abc\r\nde"</span>);  </span><br><span class="line">        //bfw.newLine();               这行代码等价于bfw.write(<span class="string">"\r\n"</span>),相当于一个跨平台的换行符  </span><br><span class="line">        //用到缓冲区就必须要刷新  </span><br><span class="line">        <span class="keyword">for</span>(int x = 1; x &lt; 5; x++) &#123;  </span><br><span class="line">            bfw.write(<span class="string">"abc"</span>);  </span><br><span class="line">            bfw.newLine();                  //java提供了一个跨平台的换行符newLine();  </span><br><span class="line">            bfw.flush();  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">        bfw.flush();                                                //刷新缓冲区  </span><br><span class="line">        bfw.close();                                                //关闭缓冲区，但是必须要先刷新  </span><br><span class="line">  </span><br><span class="line">        //注意，关闭缓冲区就是在关闭缓冲中的流对象  </span><br><span class="line">        fw.close();                                                 //关闭输入流对象  </span><br><span class="line">  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>##NIO<br>NIO 非阻塞IO(面向缓冲)<br>1.NIO弥补了原来I/O的不足之处，在IO操作中提供了高速度的，面向块的IO操作<br>2.NIO中数据的打包和传递方式是以块为单位的，普通IO中以流为操作单位</p>
+<p>NIO的2个重要特性<br>(1)通道<br>通道(Channel)是对于普通I/O中流的模拟，从任何地方读数据，或将数据写到任何地方都必须通过一个Channel对象</p>
+<p>(2)缓冲区<br>缓冲区Buffer实质上是一个容器对象，发送给一个通道的所有对象都必须首先放到缓冲区中；同样，从一个通道中读取数据时也需要先读取到缓冲区中。<br>在NIO中，所有数据都是用缓冲区进行处理的。</p>
+<p>ps:NIO效率无疑是要大大的高于IO操作的，但是实现过程要比IO复杂的多，可自行百度学习。</p>
+<p>##总结<br>复习了一下以前学习的IO知识，写的不是很完善，因为写博客很花时间，我现在每天很忙😂，继续努力吧。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-03-29T06:19:24.905Z" itemprop="dateUpdated">2018-03-29 14:19:24</time>
+</span><br>
+
+
+        
+        欢迎大家吐槽，转载请注明出处。
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="Marin">
+            Marin
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/03/26/---/&title=《Java IO流》 — Marin's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/03/26/---/&title=《Java IO流》 — Marin's Blog&source=marin的个人学习博客，分享知识，享受快乐。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/03/26/---/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java IO流》 — Marin's Blog&url=http://yoursite.com/2018/03/26/---/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/03/26/---/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/03/25/firstBlog/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">仅以这篇博客记录我未来的编程生活</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNTA4OC8xMTYyMw==">
+    <script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+    </script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Marin &copy; 2016 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/03/26/---/&title=《Java IO流》 — Marin's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/03/26/---/&title=《Java IO流》 — Marin's Blog&source=marin的个人学习博客，分享知识，享受快乐。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/03/26/---/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java IO流》 — Marin's Blog&url=http://yoursite.com/2018/03/26/---/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/03/26/---/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABwklEQVR42u3aQY6DMBAEwPz/06y01wjTM44NSOXTKmHj4tKCHn8+8Tr+19knx9f6vvLs+s+KhYuLO809husMNwaNbym54dNbwsXF3cgdh1cvjKrRlgQoLi7u07gzTx3j38TFxX0vNwmg6DEFFxf3Jdzk5ae6ffJrC9/VcHFxJ7jVwnTF3wv7XVxc3CL3KK68+MiHMYXdcXFxt3CTAep4gxVj2ouYw8XF3cLtlRoz/1utX3FxcXdyezVo72hFvuNp5OHi4m7kVocc+SfVYxYXxztwcXEfwE0eRHqDkGaA4uLibuHODEfnj3M1X7pwcXEXc8++mClEevVKuR7FxcXdwh3TkyokH5lUX3suZsK4uLg/5c6UHXltWj3AgYuLey+3CpqJqurtRaMUXFzcBdxCTdkKsryCKbye4eLiLubOHLxI1swYBhcX915uMv7sNZYzJSwuLu693F4wlZ+kgghrjlJwcXF/yq0GSvmhJIi2XtWCi4u7mpuEVy+S8hqlcMO4uLgbudXwqm7ZTFBcXNzHc/Pr84qkfGgDFxf3JdxqjZJDcXFx7+X2wqV3Te8IFy4u7k7uTGGaDGjzaKtWrri4uAu4f3R+lYyAP7tIAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
