@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-09T08:18:08.968Z</updated>
+  <updated>2018-08-22T09:59:20.907Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2018/08/22/%E6%BF%80%E6%B4%BBEclipse%20JRebel%E6%8F%92%E4%BB%B6/"/>
+    <id>http://yoursite.com/2018/08/22/激活Eclipse JRebel插件/</id>
+    <published>2018-08-22T08:56:57.661Z</published>
+    <updated>2018-08-22T09:59:20.907Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Mac下安装激活Eclipse-JRebel插件"><a href="#Mac下安装激活Eclipse-JRebel插件" class="headerlink" title="Mac下安装激活Eclipse JRebel插件"></a>Mac下安装激活Eclipse JRebel插件</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>我们做Java Web项目难免要用到JRebel插件，特别是大型的项目，但是这个插件是付费的，现在教大家破解JRebel。</p><p>Windows Eclipse破解JRebel网上教程很多，但是我查了一下基本木有看到Mac下的Eclipse破解JRebel，所以我才写了这篇博客，但是众所周知这东西具有时效性，时间长了或许就没用了。。。</p><p>###安装JRebel<br>直接在Eclipse商店安装<figure class="highlight plain"><figcaption><span>-> Eclipse MarketPlace -> JRebel -> Install```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[官网下载](https://plugins.jetbrains.com/idea/plugin/4441-JRebel-for-intellij)，贼慢。。。😂</span><br><span class="line"></span><br><span class="line">###破解JRebel</span><br><span class="line">使用反向代理破解JRebel，现在激活码注册已经没用了，我自己也试过很多方法，只有这种方法成功激活了。</span><br><span class="line">下载大神的反向代理软件[GitHub](https://github.com/ilanyu/ReverseProxy/releases/latest)</span><br><span class="line">软件没有Mac的版本，我们下载64位Windows就行了，我是在我的Windows虚拟机运行的软件，如果没有只要在局域网内的电脑都可以,我们访问的是地址，如http://127.0.0.1:8888/Zephyr （将127.0.0.1换成运行软件的电脑IP地址）</span><br><span class="line">点击active jrebel（抱歉，我已经激活完了，没有图贴了😂），选择```License Server```激活，填写地址刚才的地址，邮箱随便填。</span><br><span class="line">```如果出现：“Incorrect license server group URL.Contact license sever administrator.”</span><br></pre></td></tr></table></figure></p><p>请尝试下面地址：<br>可以尝试使用下面的激活地址：<br><a href="http://127.0.0.1:8888/88414687-3b91-4286-89ba-2dc813b107ce" target="_blank" rel="noopener">http://127.0.0.1:8888/88414687-3b91-4286-89ba-2dc813b107ce</a><br><a href="http://127.0.0.1:8888/ff47a3acc11e-4cb2-836b-9b2b26101696" target="_blank" rel="noopener">http://127.0.0.1:8888/ff47a3acc11e-4cb2-836b-9b2b26101696</a><br><a href="http://127.0.0.1:8888/11d221d1-5cf0-4557-b023-4b4adfeeb36a" target="_blank" rel="noopener">http://127.0.0.1:8888/11d221d1-5cf0-4557-b023-4b4adfeeb36a</a></p><p>激活成功不要着急关掉反向代理，打开<code>JRebel Configuration -&gt; overview -&gt; 点击work offline</code>变成我下面这样离线模式。<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="media/15349282176605/QQ20180822-173708@2x.png" alt="QQ20180822-173708@2x" title="">                </div>                <div class="image-caption">QQ20180822-173708@2x</div>            </figure></p><p>美滋滋，但是还是提醒大家如果有条件请使用正版插件。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Mac下安装激活Eclipse-JRebel插件&quot;&gt;&lt;a href=&quot;#Mac下安装激活Eclipse-JRebel插件&quot; class=&quot;headerlink&quot; title=&quot;Mac下安装激活Eclipse JRebel插件&quot;&gt;&lt;/a&gt;Mac下安装激活Eclips
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Java实现每日登陆增加积分功能</title>
