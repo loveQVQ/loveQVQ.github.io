@@ -23,9 +23,10 @@
     <meta name="description" content="思路数据库中增加最后登陆时间的字段（last_login_time），通过这个值与系统当前时间进行比较。 看到这应该明白了，只要登陆成功的时候执行判断这两个时间是否同一天就可以实现这个功能，如果是同一天我们就给他增加积分，不是我们就不加。 ps：要注意了，登陆成功的时候要更新最后一次登陆时间的，不然登陆一次就会加一次积分。 代码这个方法最关键的就是判断同一天这个功能了，我们可以利用commons-">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java实现每日登陆增加积分功能">
-<meta property="og:url" content="http://yoursite.com/2018/04/09/Java实现每日登陆增加积分功能/index.html">
+<meta property="og:url" content="http://marin.kim/2018/04/09/Java实现每日登陆增加积分功能/index.html">
 <meta property="og:site_name" content="Marin&#39;s Blog">
 <meta property="og:description" content="思路数据库中增加最后登陆时间的字段（last_login_time），通过这个值与系统当前时间进行比较。 看到这应该明白了，只要登陆成功的时候执行判断这两个时间是否同一天就可以实现这个功能，如果是同一天我们就给他增加积分，不是我们就不加。 ps：要注意了，登陆成功的时候要更新最后一次登陆时间的，不然登陆一次就会加一次积分。 代码这个方法最关键的就是判断同一天这个功能了，我们可以利用commons-">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-08-23T05:49:37.242Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java实现每日登陆增加积分功能">
@@ -100,7 +101,7 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="http://www.weibo.com/ysweb" target="_blank" >
+              <a href="http://www.weibo.com" target="_blank" >
                 <i class="icon icon-lg icon-weibo"></i>
                 Weibo
               </a>
@@ -130,7 +131,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -213,7 +214,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-08-23T05:49:37.242Z" itemprop="dateUpdated">2018-08-23 13:49:37</time>
+    最后更新时间：<time datetime="2018-08-23T05:49:37.242Z" itemprop="dateUpdated">2018-08-23 13:49:37</time>
 </span><br>
 
 
@@ -223,7 +224,7 @@
     </div>
     
     <footer>
-        <a href="http://yoursite.com">
+        <a href="http://marin.kim">
             <img src="/img/avatar.jpg" alt="Marin">
             Marin
         </a>
@@ -247,7 +248,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/04/09/Java实现每日登陆增加积分功能/&title=《Java实现每日登陆增加积分功能》 — Marin's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://marin.kim/2018/04/09/Java实现每日登陆增加积分功能/&title=《Java实现每日登陆增加积分功能》 — Marin's Blog&pic=http://marin.kim/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -257,22 +258,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/04/09/Java实现每日登陆增加积分功能/&title=《Java实现每日登陆增加积分功能》 — Marin's Blog&source=marin的个人学习博客，分享知识，享受快乐。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://marin.kim/2018/04/09/Java实现每日登陆增加积分功能/&title=《Java实现每日登陆增加积分功能》 — Marin's Blog&source=marin的个人学习博客，分享知识，享受快乐。" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/04/09/Java实现每日登陆增加积分功能/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://marin.kim/2018/04/09/Java实现每日登陆增加积分功能/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java实现每日登陆增加积分功能》 — Marin's Blog&url=http://yoursite.com/2018/04/09/Java实现每日登陆增加积分功能/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java实现每日登陆增加积分功能》 — Marin's Blog&url=http://marin.kim/2018/04/09/Java实现每日登陆增加积分功能/&via=http://marin.kim" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/04/09/Java实现每日登陆增加积分功能/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://marin.kim/2018/04/09/Java实现每日登陆增加积分功能/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -398,7 +399,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
@@ -420,7 +421,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/04/09/Java实现每日登陆增加积分功能/&title=《Java实现每日登陆增加积分功能》 — Marin's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://marin.kim/2018/04/09/Java实现每日登陆增加积分功能/&title=《Java实现每日登陆增加积分功能》 — Marin's Blog&pic=http://marin.kim/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -430,22 +431,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/04/09/Java实现每日登陆增加积分功能/&title=《Java实现每日登陆增加积分功能》 — Marin's Blog&source=marin的个人学习博客，分享知识，享受快乐。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://marin.kim/2018/04/09/Java实现每日登陆增加积分功能/&title=《Java实现每日登陆增加积分功能》 — Marin's Blog&source=marin的个人学习博客，分享知识，享受快乐。" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/04/09/Java实现每日登陆增加积分功能/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://marin.kim/2018/04/09/Java实现每日登陆增加积分功能/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java实现每日登陆增加积分功能》 — Marin's Blog&url=http://yoursite.com/2018/04/09/Java实现每日登陆增加积分功能/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java实现每日登陆增加积分功能》 — Marin's Blog&url=http://marin.kim/2018/04/09/Java实现每日登陆增加积分功能/&via=http://marin.kim" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/04/09/Java实现每日登陆增加积分功能/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://marin.kim/2018/04/09/Java实现每日登陆增加积分功能/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -456,7 +457,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACs0lEQVR42u3aQW7jQAwEQP3/07vAntdyN6mxE6B0CqxInprDkCZ5XfH159/16pNXd5OrfcN14sLDw8MbLX3z9cmb75+6/8b797zZAjw8PLxjvPtgkIDbzUpIeSh6+TkeHh7eV3nJ4b4PEvebhYeHh/e7eHniuy895Ak3Hh4e3rd4eRK8KU+0R397Fw8PD+8zvLYB9hP+Ptjfw8PDw1t01fM096mDOyndFqvFw8PDO8BLXtqetHlxoW2zzRpyeHh4eM/y9g3+/SI2hY83/4+Hh4d3mJf/4J81qNqmV9Tcuqfi4eHhHeC1iXJbFJiVg9umWlSMwMPDw3uIlxQL6tpGmWq3mxIFg/sbeHh4eAtestBNaTWh5ul12zzDw8PDO8HbNLTagYBNoysJLcOhKzw8PLwRL3+4LUO077niq2iA4eHh4R3gDRtLZbV4M5TQfn7Ncnw8PDy8NW/WskpS3mRbHwgkeHh4eMd4eUNrVvzdp84P1Kfx8PDwHuLNGlp5QXZfTZ1t2X8Sazw8PLyHeLNmf75zeTre3o3Wg4eHh/dxXntMt/jZAFYRxvDw8PC+xNtc+3GrYUjAw8PD+yBvNmi1r5rmAwdFARoPDw/vAC9vfc2GBjajAPukHA8PD+8EL1n0PgzkAwQt8s368fDw8D7Ca4/jWRl3lhzX24SHh4d3gDdrzM8GAmYpexJahuEBDw8Pb7SGp9LldiPyJlxbKDnyawAPDw8vSFKfbXTN7ubJ+st14uHh4R3gteNTs4Jv/mybardhBg8PD+8pXvuDPx8RmBUdNoXjOrHGw8PDW/CSpeRRZTNilbfEoq3Bw8PD+yqvbWttjvW8vPtm6/Hw8PB+AC9JiNtBhCRUrIoReHh4eAd4efNpMw61L8u2Iwt4eHh4J3izBtgGszn6H+vp4eHh4U14fwH819B1IbimtQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuUlEQVR42u3aQW7jQAwEwPz/07vAnhYIIneTM44PpZPhxJJqDIjjJr++4uPPv+P5r/8f399//v/vn3p+ffjAw8PDG916fsnknWdSsojJ+Z/vGQ8PD+82b3Ox58vnn2pLTlTA8PDw8H6Vl7/z4mEdb9nb7TUeHh7ep/GSre0zPi88eHh4eJ/PS8KIPGLIo4d9QHwsa8HDw8Ob72+/NkXiPa8v9vfw8PDwFl31/LH7/D/7IGN4n3h4eHgXePnWNt8Q5y2uWTHIm2F4eHh4N3ibH/nPl2mD3bxJlhcqPDw8vBu8TaMr550NiNvhMDw8PLyzvH2Lq/1s/ViPzx99b3h4eHhrXnu6tsc0W6AN+8V3iIeHh3eIt2/e57HCbKN8pQbi4eHhHeLNMO1wQLEhjs/2Ymnw8PDwLvDaH/ntprndRh+YicDDw8O7wGsv1ra79kNa+XBD0QDDw8PDW/CSKCEPBdrteD5QlZSoHxcXDw8P7ygveQTnj+9ZwUhCjTakKCoMHh4e3oi3Qc4GCGYBRLIEeHh4eLd5RdMojn1Ppan5/UTlBw8PD+8or21T5ZvjNuDYt8rw8PDw3s9rH9wzfD4ckEcVh7t8eHh4eD+8zj/WNsaKmKAMQYrCgIeHh3eNN2txtcNVV7bLz2fAw8PDu8C7Ec7uh7fawYJ8PAsPDw/vBm8WQ+RnaJcvD5RX3xgeHh5eyTu7OU5Is5ijbbPh4eHhvZOXb5Hzx/c+FM4TBjw8PLx7vM0owKa5lbe4ksD3RUqNh4eHd5S3qiflONRsOTYDBHh4eHj3eEkxaG+uXbKzhQEPDw/vPbz95WeP+H0AEcW4eHh4eB/Aa0eyZpHxfpQBDw8P73d5qzwjKBtt4y1abjw8PLxrvLblnzfM8rGAWQhSjKvi4eHhHeKdjVxn41n5GTYxBx4eHt6a9xdheOQpchjQkwAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 

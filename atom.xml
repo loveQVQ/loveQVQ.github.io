@@ -5,9 +5,9 @@
   <subtitle>不学习你和咸鱼有什么区别</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://marin.kim/"/>
   <updated>2018-08-23T06:02:30.636Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://marin.kim/</id>
   
   <author>
     <name>Marin</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Mac下安装激活Eclipse JRebel插件</title>
-    <link href="http://yoursite.com/2018/08/22/%E6%BF%80%E6%B4%BBEclipse%20JRebel%E6%8F%92%E4%BB%B6/"/>
-    <id>http://yoursite.com/2018/08/22/激活Eclipse JRebel插件/</id>
+    <link href="http://marin.kim/2018/08/22/%E6%BF%80%E6%B4%BBEclipse%20JRebel%E6%8F%92%E4%BB%B6/"/>
+    <id>http://marin.kim/2018/08/22/激活Eclipse JRebel插件/</id>
     <published>2018-08-22T08:56:57.661Z</published>
     <updated>2018-08-23T06:02:30.636Z</updated>
     
@@ -40,8 +40,8 @@
   
   <entry>
     <title>Java实现每日登陆增加积分功能</title>
-    <link href="http://yoursite.com/2018/04/09/Java%E5%AE%9E%E7%8E%B0%E6%AF%8F%E6%97%A5%E7%99%BB%E9%99%86%E5%A2%9E%E5%8A%A0%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/"/>
-    <id>http://yoursite.com/2018/04/09/Java实现每日登陆增加积分功能/</id>
+    <link href="http://marin.kim/2018/04/09/Java%E5%AE%9E%E7%8E%B0%E6%AF%8F%E6%97%A5%E7%99%BB%E9%99%86%E5%A2%9E%E5%8A%A0%E7%A7%AF%E5%88%86%E5%8A%9F%E8%83%BD/"/>
+    <id>http://marin.kim/2018/04/09/Java实现每日登陆增加积分功能/</id>
     <published>2018-04-09T07:04:52.629Z</published>
     <updated>2018-08-23T05:49:37.242Z</updated>
     
@@ -62,8 +62,8 @@
   
   <entry>
     <title>Java IO流</title>
-    <link href="http://yoursite.com/2018/03/26/JavaIO/"/>
-    <id>http://yoursite.com/2018/03/26/JavaIO/</id>
+    <link href="http://marin.kim/2018/03/26/JavaIO/"/>
+    <id>http://marin.kim/2018/03/26/JavaIO/</id>
     <published>2018-03-26T07:19:01.101Z</published>
     <updated>2018-08-23T06:09:22.163Z</updated>
     
@@ -83,8 +83,8 @@
   
   <entry>
     <title>仅以这篇博客记录我未来的编程生活</title>
-    <link href="http://yoursite.com/2018/03/25/firstBlog/"/>
-    <id>http://yoursite.com/2018/03/25/firstBlog/</id>
+    <link href="http://marin.kim/2018/03/25/firstBlog/"/>
+    <id>http://marin.kim/2018/03/25/firstBlog/</id>
     <published>2018-03-25T13:57:42.266Z</published>
     <updated>2018-03-25T14:17:36.885Z</updated>
     
