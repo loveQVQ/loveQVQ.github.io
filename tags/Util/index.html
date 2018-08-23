@@ -13,7 +13,7 @@
     
     
     
-    <title>Marin&#39;s Blog | 不学习你和咸鱼有什么区别</title>
+    <title>Tags: Util | Marin&#39;s Blog | 不学习你和咸鱼有什么区别</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -23,7 +23,7 @@
     <meta name="description" content="marin的个人学习博客，分享知识，享受快乐。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Marin&#39;s Blog">
-<meta property="og:url" content="http://marin.kim/index.html">
+<meta property="og:url" content="http://marin.kim/tags/Util/index.html">
 <meta property="og:site_name" content="Marin&#39;s Blog">
 <meta property="og:description" content="marin的个人学习博客，分享知识，享受快乐。">
 <meta property="og:locale" content="zh-CN">
@@ -64,7 +64,7 @@
     <div class="scroll-wrap flex-col">
       <ul class="nav">
         
-            <li class="waves-block waves-effect active">
+            <li class="waves-block waves-effect">
               <a href="/"  >
                 <i class="icon icon-lg icon-home"></i>
                 HOME
@@ -78,7 +78,7 @@
               </a>
             </li>
         
-            <li class="waves-block waves-effect">
+            <li class="waves-block waves-effect active">
               <a href="/tags"  >
                 <i class="icon icon-lg icon-tags"></i>
                 标签
@@ -124,7 +124,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Marin&#39;s Blog</div>
+        <div class="flex-col header-title ellipsis">Tags: Util</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -143,79 +143,54 @@
         
     </div>
 </header>
-<header class="content-header index-header">
+<header class="content-header tags-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Marin&#39;s Blog</h1>
+        <h1 class="title">Tags: Util</h1>
         <h5 class="subtitle">
-            
-                不学习你和咸鱼有什么区别
             
         </h5>
     </div>
 
     
+<div class="tabs-bar container">
+    <nav class="tags-list">
+        <a href="/tags" style="-webkit-order:-1;order:-1" class="tags-list-item waves-effect waves-button waves-light
+            ">全部</a>
+        
+
+            <a href="/tags/Java/" style="-webkit-order:0;order:0" class="tags-list-item waves-effect waves-button waves-light">Java</a>
+
+        
+
+            <a href="/tags/Util/" style="-webkit-order:1;order:1" class="tags-list-item waves-effect waves-button waves-light active">Util</a>
+
+        
+    </nav>
+    <!-- PC show more-->
+    <div class="tags-list-more">
+        <a href="javascript:;" onclick="BLOG.tabBar(this)" class="action tags-list-item waves-effect waves-circle waves-light"><i class="icon icon-ellipsis-h"></i></a>
+    </div>
+</div>
+
 
 
 </header>
 
-<div class="container body-wrap">
-
-    <ul class="post-list">
+<div class="container body-wrap fade">
     
-        <li class="post-list-item fade">
-            <article id="post-激活Eclipse JRebel插件"
-  class="article-card article-type-post" itemprop="blogPost">
+            <div class="waterfall">
+          
 
+            <div class="waterfall-item">
+  <article class="article-card archive-article">
     <div class="post-meta">
-        <time class="post-time" title="2018-08-22 16:56:57" datetime="2018-08-22T08:56:57.661Z"  itemprop="datePublished">2018-08-22</time>
+      <time class="post-time" title="2018-04-09 15:04:52" datetime="2018-04-09T07:04:52.629Z"  itemprop="datePublished">2018-04-09</time>
 
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/08/22/激活Eclipse JRebel插件/">Mac下安装激活Eclipse JRebel插件</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        概述我们做Java Web项目难免要用到JRebel插件，特别是大型的项目，但是这个插件是付费的，现在教大家破解JRebel。
-Windows Eclipse破解JRebel网上教程很多，但是我查了一下基本木有看到Mac下的Eclipse破解JRebel，所以我才写了这篇博客，但是众所周知这东西具有时效性，时间长了或许就没用了。。。
-安装JRebel直接在Eclipse商店安装help -&...
-    
-
-        <a href="/2018/08/22/激活Eclipse JRebel插件/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Java实现每日登陆增加积分功能"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-04-09 15:04:52" datetime="2018-04-09T07:04:52.629Z"  itemprop="datePublished">2018-04-09</time>
-
-        
+      
 
 
     </div>
-
     
 
 
@@ -227,20 +202,6 @@ Windows Eclipse破解JRebel网上教程很多，但是我查了一下基本木�
 
 
 
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        思路数据库中增加最后登陆时间的字段（last_login_time），通过这个值与系统当前时间进行比较。
-看到这应该明白了，只要登陆成功的时候执行判断这两个时间是否同一天就可以实现这个功能，如果是同一天我们就给他增加积分，不是我们就不加。
-ps：要注意了，登陆成功的时候要更新最后一次登陆时间的，不然登陆一次就会加一次积分。
-代码这个方法最关键的就是判断同一天这个功能了，我们可以利用commo...
-    
-
-        <a href="/2018/04/09/Java实现每日登陆增加积分功能/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
     
     <div class="post-footer">
         
@@ -248,102 +209,15 @@ ps：要注意了，登陆成功的时候要更新最后一次登陆时间的，
 
     </div>
     
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-JavaIO"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-03-26 15:19:01" datetime="2018-03-26T07:19:01.101Z"  itemprop="datePublished">2018-03-26</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/03/26/JavaIO/">Java IO流</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        概述Java中对于数据的操作都是通过流来实现的，而所有操作流的对象都在IO包中。所谓IO流其实是指，Input和Output流。首先明白字节(Byte)和字符(Character)的大小
-
-1 byte = 8 bit
-1 char = 2 byte = 16 bit(Java默认UTF-16编码)
-
-详细请看下面关系图：
-                
-                 ...
-    
-
-        <a href="/2018/03/26/JavaIO/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-firstBlog"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-03-25 21:57:42" datetime="2018-03-25T13:57:42.266Z"  itemprop="datePublished">2018-03-25</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/03/25/firstBlog/">仅以这篇博客记录我未来的编程生活</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        知识是一个不断积累的过程2015年开始进入大学接触编程先是学了C，然后是C#，现在主要在使用Java进行开发，还想学习Python。回想起之前的编程学习之路感觉自己学的多，忘记的更多😂，现在我想把我学习的知识记录下来，方便自己以后翻看。
-123456#include&lt;stdio.h&gt;int main()&#123;printf("hello world!\n");&#125;
-
-    
-
-        <a href="/2018/03/25/firstBlog/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-    </ul>
-
-    
-
+  </article>
 </div>
+
+        
+            </div>
+        
+    
+</div>
+
 
         <footer class="footer">
     <div class="top">
@@ -384,7 +258,7 @@ ps：要注意了，登陆成功的时候要更新最后一次登陆时间的，
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://marin.kim/&title=Marin's Blog&pic=http://marin.kim/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://marin.kim/tags/Util/&title=Marin's Blog&pic=http://marin.kim/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -394,22 +268,22 @@ ps：要注意了，登陆成功的时候要更新最后一次登陆时间的，
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://marin.kim/&title=Marin's Blog&source=marin的个人学习博客，分享知识，享受快乐。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://marin.kim/tags/Util/&title=Marin's Blog&source=marin的个人学习博客，分享知识，享受快乐。" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://marin.kim/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://marin.kim/tags/Util/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Marin's Blog&url=http://marin.kim/&via=http://marin.kim" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Marin's Blog&url=http://marin.kim/tags/Util/&via=http://marin.kim" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://marin.kim/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://marin.kim/tags/Util/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -420,7 +294,7 @@ ps：要注意了，登陆成功的时候要更新最后一次登陆时间的，
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAAAAAAZai4+AAABYElEQVR42u3awQ7CIBCE4b7/S2PiSQ/UmYEeZH5OxrT4YcKywF6X3Ma7zb4ZH015d1uDBesg1rhts2f0Ydz3M+0TFqxKltu18vxseFIQgQULlvkzs0kOCxasp1kKKAsusGA1s5SkeX15fiSXhwXrCJZ7kLTy+cHzLViw/pY1oqYc6brL/FcPsGCVsfTlVrlE0a9epFQAFqxilttplh1ICzksWDUsfRuplBco0146SIIFq4yV7SWzkoLN4QYWrENZ7oJ9/5YSJqT/CRasApY+ybPJr7OM82NYsI5j6RM7S3YVtLS3hgXraJayEdWhegHQj3ADC1YZa+U6xF2e3ZAEC1YPKywFkC9Ew3ADC1YZa9fFpFsklBUxwIJ1NksvucuKeMJ3YcGqZGWFdOulA8ZtDyxYsJZLB5RMYVuAgAXraJY7i7PDKViwmllZ0uwOwy4AggWrhpWltm53bsEQLFg1rBeefSwjAuAW1gAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAB0ElEQVR42u3aS27DMAwFwNz/0i7QbRDrkYxUFxitgrSORl4Q/Oj1itf1u/Lv3//6/vn+2dHCxcUdc6/b9el/7n/n/pv7Ayz2wsXFPcjthaH8YMlTUaDExcV9GPdTcEnCXBLycHFx/y+3ephquoOLi/scbi8F6TVEDtVquLi4A+6+7fPPG/u7uLi4Re41WEmTtNoiWTyLi4t7hDtpf+QNjl5TNarVcHFxN3DvWdVEJDlq/poWVRouLu5xbtK4TNqj1YMtDomLi3uEm1CqCVBOT4Yui+IHFxf3j7jV4WuesvSewsXFPcntjVd7ly16rwkXF/ckNx+s5tezehcvRnRcXNwvcXvj0l6akv/OYiaMi4u7mdtrX05GJr3hyqjbiouLW+TmLcs8TZkcI6rScHFxN3MnlyeqFziq7ddFrYaLi7uN29ssH7veh79ysYSLi3uE27sqsX0oEuyIi4u7j3sVV3WzaghbvD5cXNwj3B13G/JiZpI24eLi7uYmwSs/62QwE4UwXFzcg9w8eFVHp71k5eNeuLi4j+TmaU11lBINg3FxcR/GnTRVq8dr3hnBxcX9KjcvfvJmR2GGkzdHcHFxj3CrpUje1MhxScjDxcU9wv0BHgV2na4BzF0AAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
