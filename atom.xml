@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://marin.kim/"/>
-  <updated>2018-09-01T05:15:54.541Z</updated>
+  <updated>2018-09-01T07:15:54.554Z</updated>
   <id>http://marin.kim/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac下打造优美的终端</title>
+    <link href="http://marin.kim/2018/09/01/%E6%89%93%E9%80%A0%E4%BC%98%E7%BE%8E%E7%9A%84mac%E7%BB%88%E7%AB%AF/"/>
+    <id>http://marin.kim/2018/09/01/打造优美的mac终端/</id>
+    <published>2018-09-01T07:14:09.187Z</published>
+    <updated>2018-09-01T07:15:54.554Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>首先呢Mac终端是我们每天都要用到的(对于程序员🤒来说),虽然比windows下终端颜值高了些，而且还有许多自定义的调节(透明度，ANSI等等)，但是还是很丑。。。<br>我自己参考了一些教程，最后做出来效果是这样的<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://marin-image-upyun.test.upcdn.net/blog_image/blog/mac-iterm2.jpg" alt="效果图" title="">                </div>                <div class="image-caption">效果图</div>            </figure></p><h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p>首先开始之前，你必须要学会基本的Linux操作命令，如<code>ls、vim</code>之类的，下面用的命令都很简单。在者你需要安装一些东西，如<code>pip、git</code></p><h3 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h3><p>命令：<br><code>sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</code><br>很抱歉，忘了截图了😂。一般只有网络通畅应该没问题。官网在<a href="https://ohmyz.sh" target="_blank" rel="noopener">这里</a>。<br>如果你安装不上，可以去官网试一下其他方法。</p><h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><p>我们需要修改.zshrc这个文件，将主题修改成agnoster,<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes" target="_blank" rel="noopener">官网主题</a>自己可以看看。<br>命令：<code>vim ~/.zshrc</code><br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://marin-image-upyun.test.upcdn.net/blog_image/blog/mac-iterm.png" alt="修改主题" title="">                </div>                <div class="image-caption">修改主题</div>            </figure></p><h3 id="配置字体"><a href="#配置字体" class="headerlink" title="配置字体"></a>配置字体</h3><p>现在打开终端应该乱码了，我们需要下载安装<code>Powerlin</code>字体。<br>我们用<code>pip</code>安装，没有的先装一下<code>pip</code>，命令：<code>sudo easy_install pip</code><br>安装<code>Powerlin</code>命令：<code>pip install powerline-status</code><br>PS: 这里新版Mac使用pip可以报错，解决看<a href="https://www.jianshu.com/p/a02b390d86a4" target="_blank" rel="noopener">这里</a>。</p><p>下载安装字体库：<br><code>git clone https://github.com/powerline/fonts ~/Downloads/github</code><br><code>cd ~/Downloads/fonts</code><br><code>./install.sh</code></p><h2 id="配置终端"><a href="#配置终端" class="headerlink" title="配置终端"></a>配置终端</h2><p>快捷键<code>command+,</code>打开终端设置。<br>配置好字体后就不会乱码了，字体需要带<code>powerlin</code>字样<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://marin-image-upyun.test.upcdn.net/blog_image/blog/mac-iterm3.png" alt="终端" title="">                </div>                <div class="image-caption">终端</div>            </figure><br>其他的可以参考图片配置<br>ANSI颜色配置：</p><table><thead><tr><th>#000000</th><th>#FF7E79</th><th>#1DBB9A</th><th>#FEF034</th><th>#69AEF8</th><th>#A665A5</th><th>#1DAFEC</th><th>#C7C7C7</th></tr></thead><tbody><tr><td>#666666</td><td>#FD6D71</td><td>#3CC5AA</td><td>#FEFB67</td><td>#69AEF8</td><td>#EE6FA9</td><td>#468CC8</td><td>#FFFFFF</td></tr></tbody></table><p>最后，透明度50%,去掉模糊。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>好了，是不是美滋滋。😇</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;首先呢Mac终端是我们每天都要用到的(对于程序员🤒来说),虽然比windows下终端颜值高了些，而且还有许多自定义的调节(透明度，ANSI
+      
+    
+    </summary>
+    
+      <category term="Util" scheme="http://marin.kim/categories/Util/"/>
+    
+    
+      <category term="Util" scheme="http://marin.kim/tags/Util/"/>
+    
+  </entry>
   
   <entry>
     <title>Eclipse Spring MVC项目搭建</title>
@@ -142,31 +167,6 @@
     
     
       <category term="Daily" scheme="http://marin.kim/tags/Daily/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mac下打造优美的终端</title>
-    <link href="http://marin.kim/2018/03/25/%E6%89%93%E9%80%A0%E4%BC%98%E7%BE%8E%E7%9A%84mac%E7%BB%88%E7%AB%AF/"/>
-    <id>http://marin.kim/2018/03/25/打造优美的mac终端/</id>
-    <published>2018-03-25T13:57:42.266Z</published>
-    <updated>2018-09-01T07:07:20.876Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>首先呢Mac终端是我们每天都要用到的(对于程序员🤒来说),虽然比windows下终端颜值高了些，而且还有许多自定义的调节(透明度，ANSI等等)，但是还是很丑。。。<br>我自己参考了一些教程，最后做出来效果是这样的<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://marin-image-upyun.test.upcdn.net/blog_image/blog/mac-iterm2.jpg" alt="效果图" title="">                </div>                <div class="image-caption">效果图</div>            </figure></p><h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p>首先开始之前，你必须要学会基本的Linux操作命令，如<code>ls、vim</code>之类的，下面用的命令都很简单。在者你需要安装一些东西，如<code>pip、git</code></p><h3 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h3><p>命令：<br><code>sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</code><br>很抱歉，忘了截图了😂。一般只有网络通畅应该没问题。官网在<a href="https://ohmyz.sh" target="_blank" rel="noopener">这里</a>。<br>如果你安装不上，可以去官网试一下其他方法。</p><h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><p>我们需要修改.zshrc这个文件，将主题修改成agnoster,<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes" target="_blank" rel="noopener">官网主题</a>自己可以看看。<br>命令：<code>vim ~/.zshrc</code><br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://marin-image-upyun.test.upcdn.net/blog_image/blog/mac-iterm.png" alt="修改主题" title="">                </div>                <div class="image-caption">修改主题</div>            </figure></p><h3 id="配置字体"><a href="#配置字体" class="headerlink" title="配置字体"></a>配置字体</h3><p>现在打开终端应该乱码了，我们需要下载安装<code>Powerlin</code>字体。<br>我们用<code>pip</code>安装，没有的先装一下<code>pip</code>，命令：<code>sudo easy_install pip</code><br>安装<code>Powerlin</code>命令：<code>pip install powerline-status</code><br>PS: 这里新版Mac使用pip可以报错，解决看<a href="https://www.jianshu.com/p/a02b390d86a4" target="_blank" rel="noopener">这里</a>。</p><p>下载安装字体库：<br><code>git clone https://github.com/powerline/fonts ~/Downloads/github</code><br><code>cd ~/Downloads/fonts</code><br><code>./install.sh</code></p><h2 id="配置终端"><a href="#配置终端" class="headerlink" title="配置终端"></a>配置终端</h2><p>快捷键<code>command+,</code>打开终端设置。<br>配置好字体后就不会乱码了，字体需要带<code>powerlin</code>字样<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://marin-image-upyun.test.upcdn.net/blog_image/blog/mac-iterm3.png" alt="终端" title="">                </div>                <div class="image-caption">终端</div>            </figure><br>其他的可以参考图片配置<br>ANSI颜色配置：</p><table><thead><tr><th>#000000</th><th>#FF7E79</th><th>#1DBB9A</th><th>#FEF034</th><th>#69AEF8</th><th>#A665A5</th><th>#1DAFEC</th><th>#C7C7C7</th></tr></thead><tbody><tr><td>#666666</td><td>#FD6D71</td><td>#3CC5AA</td><td>#FEFB67</td><td>#69AEF8</td><td>#EE6FA9</td><td>#468CC8</td><td>#FFFFFF</td></tr></tbody></table><p>最后，透明度50%,去掉模糊。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>好了，是不是美滋滋。😇</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;首先呢Mac终端是我们每天都要用到的(对于程序员🤒来说),虽然比windows下终端颜值高了些，而且还有许多自定义的调节(透明度，ANSI
-      
-    
-    </summary>
-    
-      <category term="Util" scheme="http://marin.kim/categories/Util/"/>
-    
-    
-      <category term="Util" scheme="http://marin.kim/tags/Util/"/>
     
   </entry>
   

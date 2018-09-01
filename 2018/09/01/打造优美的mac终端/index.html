@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Mac下打造优美的终端 | Marin&#39;s Blog | 不学习你和咸鱼有什么区别</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Util">
+    <meta name="description" content="概述首先呢Mac终端是我们每天都要用到的(对于程序员🤒来说),虽然比windows下终端颜值高了些，而且还有许多自定义的调节(透明度，ANSI等等)，但是还是很丑。。。我自己参考了一些教程，最后做出来效果是这样的">
+<meta name="keywords" content="Util">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac下打造优美的终端">
+<meta property="og:url" content="http://marin.kim/2018/09/01/打造优美的mac终端/index.html">
+<meta property="og:site_name" content="Marin&#39;s Blog">
+<meta property="og:description" content="概述首先呢Mac终端是我们每天都要用到的(对于程序员🤒来说),虽然比windows下终端颜值高了些，而且还有许多自定义的调节(透明度，ANSI等等)，但是还是很丑。。。我自己参考了一些教程，最后做出来效果是这样的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://marin-image-upyun.test.upcdn.net/blog_image/blog/mac-iterm2.jpg">
+<meta property="og:image" content="http://marin-image-upyun.test.upcdn.net/blog_image/blog/mac-iterm.png">
+<meta property="og:image" content="http://marin-image-upyun.test.upcdn.net/blog_image/blog/mac-iterm3.png">
+<meta property="og:updated_time" content="2018-09-01T07:15:54.554Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac下打造优美的终端">
+<meta name="twitter:description" content="概述首先呢Mac终端是我们每天都要用到的(对于程序员🤒来说),虽然比windows下终端颜值高了些，而且还有许多自定义的调节(透明度，ANSI等等)，但是还是很丑。。。我自己参考了一些教程，最后做出来效果是这样的">
+<meta name="twitter:image" content="http://marin-image-upyun.test.upcdn.net/blog_image/blog/mac-iterm2.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="Marin&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="https://loveqvq.github.io" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Marin</h5>
+          <a href="mailto:1206189319@qq.com" title="1206189319@qq.com" class="mail">1206189319@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/loveQVQ" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.marin.kim"  >
+                <i class="icon icon-lg icon-link"></i>
+                My Works
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Mac下打造优美的终端</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Mac下打造优美的终端</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-09-01T07:14:09.187Z" itemprop="datePublished" class="page-time">
+  2018-09-01
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Util/">Util</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#教程"><span class="post-toc-number">2.</span> <span class="post-toc-text">教程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装oh-my-zsh"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">安装oh-my-zsh</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改主题"><span class="post-toc-number">3.</span> <span class="post-toc-text">修改主题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置字体"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">配置字体</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置终端"><span class="post-toc-number">4.</span> <span class="post-toc-text">配置终端</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">5.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-打造优美的mac终端"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Mac下打造优美的终端</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-09-01 15:14:09" datetime="2018-09-01T07:14:09.187Z"  itemprop="datePublished">2018-09-01</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Util/">Util</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>首先呢Mac终端是我们每天都要用到的(对于程序员🤒来说),虽然比windows下终端颜值高了些，而且还有许多自定义的调节(透明度，ANSI等等)，但是还是很丑。。。<br>我自己参考了一些教程，最后做出来效果是这样的<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://marin-image-upyun.test.upcdn.net/blog_image/blog/mac-iterm2.jpg" alt="效果图" title="">
+                </div>
+                <div class="image-caption">效果图</div>
+            </figure></p>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p>首先开始之前，你必须要学会基本的Linux操作命令，如<code>ls、vim</code>之类的，下面用的命令都很简单。在者你需要安装一些东西，如<code>pip、git</code></p>
+<h3 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h3><p>命令：<br><code>sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</code><br>很抱歉，忘了截图了😂。一般只有网络通畅应该没问题。官网在<a href="https://ohmyz.sh" target="_blank" rel="noopener">这里</a>。<br>如果你安装不上，可以去官网试一下其他方法。</p>
+<h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><p>我们需要修改.zshrc这个文件，将主题修改成agnoster,<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes" target="_blank" rel="noopener">官网主题</a>自己可以看看。<br>命令：<code>vim ~/.zshrc</code><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://marin-image-upyun.test.upcdn.net/blog_image/blog/mac-iterm.png" alt="修改主题" title="">
+                </div>
+                <div class="image-caption">修改主题</div>
+            </figure></p>
+<h3 id="配置字体"><a href="#配置字体" class="headerlink" title="配置字体"></a>配置字体</h3><p>现在打开终端应该乱码了，我们需要下载安装<code>Powerlin</code>字体。<br>我们用<code>pip</code>安装，没有的先装一下<code>pip</code>，命令：<code>sudo easy_install pip</code><br>安装<code>Powerlin</code>命令：<code>pip install powerline-status</code><br>PS: 这里新版Mac使用pip可以报错，解决看<a href="https://www.jianshu.com/p/a02b390d86a4" target="_blank" rel="noopener">这里</a>。</p>
+<p>下载安装字体库：<br><code>git clone https://github.com/powerline/fonts ~/Downloads/github</code><br><code>cd ~/Downloads/fonts</code><br><code>./install.sh</code></p>
+<h2 id="配置终端"><a href="#配置终端" class="headerlink" title="配置终端"></a>配置终端</h2><p>快捷键<code>command+,</code>打开终端设置。<br>配置好字体后就不会乱码了，字体需要带<code>powerlin</code>字样<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://marin-image-upyun.test.upcdn.net/blog_image/blog/mac-iterm3.png" alt="终端" title="">
+                </div>
+                <div class="image-caption">终端</div>
+            </figure><br>其他的可以参考图片配置<br>ANSI颜色配置：</p>
+<table>
+<thead>
+<tr>
+<th>#000000</th>
+<th>#FF7E79</th>
+<th>#1DBB9A</th>
+<th>#FEF034</th>
+<th>#69AEF8</th>
+<th>#A665A5</th>
+<th>#1DAFEC</th>
+<th>#C7C7C7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#666666</td>
+<td>#FD6D71</td>
+<td>#3CC5AA</td>
+<td>#FEFB67</td>
+<td>#69AEF8</td>
+<td>#EE6FA9</td>
+<td>#468CC8</td>
+<td>#FFFFFF</td>
+</tr>
+</tbody>
+</table>
+<p>最后，透明度50%,去掉模糊。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>好了，是不是美滋滋。😇</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-09-01T07:15:54.554Z" itemprop="dateUpdated">2018-09-01 15:15:54</time>
+</span><br>
+
+
+        
+        欢迎大家吐槽，转载请注明出处。
+        
+    </div>
+    
+    <footer>
+        <a href="http://marin.kim">
+            <img src="/img/avatar.jpg" alt="Marin">
+            Marin
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Util/">Util</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://marin.kim/2018/09/01/打造优美的mac终端/&title=《Mac下打造优美的终端》 — Marin's Blog&pic=http://marin.kim/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://marin.kim/2018/09/01/打造优美的mac终端/&title=《Mac下打造优美的终端》 — Marin's Blog&source=marin的个人学习博客，分享知识，享受快乐。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://marin.kim/2018/09/01/打造优美的mac终端/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Mac下打造优美的终端》 — Marin's Blog&url=http://marin.kim/2018/09/01/打造优美的mac终端/&via=http://marin.kim" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://marin.kim/2018/09/01/打造优美的mac终端/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/08/24/Spring MVC/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Eclipse Spring MVC项目搭建</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNTA4OC8xMTYyMw==">
+    <script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+    </script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Marin &copy; 2016 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://marin.kim/2018/09/01/打造优美的mac终端/&title=《Mac下打造优美的终端》 — Marin's Blog&pic=http://marin.kim/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://marin.kim/2018/09/01/打造优美的mac终端/&title=《Mac下打造优美的终端》 — Marin's Blog&source=marin的个人学习博客，分享知识，享受快乐。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://marin.kim/2018/09/01/打造优美的mac终端/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Mac下打造优美的终端》 — Marin's Blog&url=http://marin.kim/2018/09/01/打造优美的mac终端/&via=http://marin.kim" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://marin.kim/2018/09/01/打造优美的mac终端/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACI0lEQVR42u3aUW6DMBAFwNz/0vQAJOTtLm2FPf6KCAVPKj157X294nGcRvLt+c7z9fPnT391w8DAwHgs47gc1y/4dM/1E66fnDzzDRUDA2MDxiQWe1O5zsx8bhgYGBjJPb2Ynr8XAwMDI3ncvSXxvwUuBgbGQxhJdOaTyKdYLX1vqMUxMDAeyMgj8u8//8r5BgYGxqMYR3FUDzXzg8ljMDAwMNZm5AHXgyVTz69/2bDDwMBYlFEtU/MJJRGc3/nl+RgYGEsz5mGah2beKNbDY2BgrMrIw27S2lUtfatNHhgYGDsw8i2zPKYnx5DV92JgYKzN6K2seq0S1bawqHCt1s0YGBiPZfQaLPL2iPzwshe+GBgYazOq5WgSuMkUJ5txX1a4GBgYWzJ6m/jVIK5S35SvGBgYizLuKmKrBwn5ojMPaAwMjFUZ1UjtbXv1fpRmswUGBsZyjF6k3tVMlkdw9INiYGAsyqjGX+81VXwS383/AwYGxgMZd22ZJbBqlOdPw8DA2IGRb/pPloOTSI224TAwMDZgTJZi+dFCb5MuCncMDIxtGPkh4vz6nIeBgbED4yiOPIh7C81kEzBa22JgYCzEmBeWkzaLGxosMDAwtmFMmiEmC8Q8jjEwMDDmTRX5Nlm1sSNHYmBgYCRFZhWfR3ySqxgYGBjV7bbqkcCkERYDA2MfRnUBlzdD9BrFyg1nGBgYSzMmcTk5f7ir1RUDA2Npxg8EUJNh6RA2FgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
